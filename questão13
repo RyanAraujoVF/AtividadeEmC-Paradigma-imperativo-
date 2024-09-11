@@ -1,0 +1,36 @@
+#include <stdio.h>
+
+int main() {
+    int num1, num2, num3;
+    float media;
+
+    do {
+        printf("Digite o primeiro valor (não pode ser negativo): ");
+        scanf("%d", &num1);
+        if (num1 < 0) {
+            printf("Por favor, insira um valor positivo.\n");
+        }
+    } while (num1 < 0);
+
+    do {
+        printf("Digite o segundo valor (não pode ser negativo): ");
+        scanf("%d", &num2);
+        if (num2 < 0) {
+            printf("Por favor, insira um valor positivo.\n");
+        }
+    } while (num2 < 0);
+
+    do {
+        printf("Digite o terceiro valor (não pode ser negativo): ");
+        scanf("%d", &num3);
+        if (num3 < 0) {
+            printf("Por favor, insira um valor positivo.\n");
+        }
+    } while (num3 < 0);
+
+    media = (num1 + num2 + num3) / 3.0;
+
+    printf("A média dos valores %d, %d e %d é: %.2f\n", num1, num2, num3, media);
+
+    return 0;
+}
