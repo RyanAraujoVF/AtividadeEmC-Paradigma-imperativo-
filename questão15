@@ -1,0 +1,34 @@
+#include <stdio.h>
+
+int main() {
+    int horas_trabalhadas;
+    double valor_hora, salario;
+
+    do {
+        printf("Digite o número de horas trabalhadas na semana (não pode ser negativo): ");
+        scanf("%d", &horas_trabalhadas);
+        if (horas_trabalhadas < 0) {
+            printf("Por favor, insira um valor positivo.\n");
+        }
+    } while (horas_trabalhadas < 0);
+
+    do {
+        printf("Digite o valor da hora (não pode ser negativo): ");
+        scanf("%lf", &valor_hora);
+        if (valor_hora < 0) {
+            printf("Por favor, insira um valor positivo.\n");
+        }
+    } while (valor_hora < 0);
+
+    if (horas_trabalhadas <= 40) {
+        salario = horas_trabalhadas * valor_hora;
+    } else if (horas_trabalhadas <= 60) {
+        salario = 40 * valor_hora + (horas_trabalhadas - 40) * valor_hora * 1.5;
+    } else {
+        salario = 40 * valor_hora + 20 * valor_hora * 1.5 + (horas_trabalhadas - 60) * valor_hora * 2;
+    }
+
+    printf("O salário semanal é: %.2lf\n", salario);
+
+    return 0;
+}
