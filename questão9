@@ -1,0 +1,33 @@
+#include <stdio.h>
+
+int main() {
+    int valores[10];
+    int maior, menor;
+
+    printf("Digite 10 valores positivos:\n");
+    for (int i = 0; i < 10; i++) {
+        do {
+            printf("Valor %d: ", i + 1);
+            scanf("%d", &valores[i]);
+            if (valores[i] < 0) {
+                printf("Por favor, insira um valor positivo.\n");
+            }
+        } while (valores[i] < 0);
+    }
+
+    maior = menor = valores[0];
+
+    for (int i = 1; i < 10; i++) {
+        if (valores[i] > maior) {
+            maior = valores[i];
+        }
+        if (valores[i] < menor) {
+            menor = valores[i];
+        }
+    }
+
+    printf("Maior valor: %d\n", maior);
+    printf("Menor valor: %d\n", menor);
+
+    return 0;
+}
