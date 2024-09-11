@@ -1,0 +1,48 @@
+#include <stdio.h>
+
+int situacao_aluno(int media, int faltas, int horas_aula) {
+    int limite_faltas = horas_aula * 0.25; 
+
+    if (media >= 60 && faltas <= limite_faltas) {
+        return 1; // Aprovado
+    } else {
+        return 0; // Reprovado
+    }
+}
+
+int main() {
+    int media, faltas, horas_aula;
+
+    do {
+        printf("Digite a média final do aluno (0 a 100): ");
+        scanf("%d", &media);
+        if (media < 0 || media > 100) {
+            printf("Por favor, insira uma média válida entre 0 e 100.\n");
+        }
+    } while (media < 0 || media > 100);
+
+    do {
+        printf("Digite o número de faltas do aluno: ");
+        scanf("%d", &faltas);
+        if (faltas < 0) {
+            printf("Por favor, insira um número de faltas positivo.\n");
+        }
+    } while (faltas < 0);
+
+    do {
+        printf("Digite a quantidade de horas-aula no semestre: ");
+        scanf("%d", &horas_aula);
+        if (horas_aula <= 0) {
+            printf("Por favor, insira uma quantidade positiva de horas-aula.\n");
+        }
+    } while (horas_aula <= 0);
+
+   
+    if (situacao_aluno(media, faltas, horas_aula)) {
+        printf("O aluno foi aprovado.\n");
+    } else {
+        printf("O aluno foi reprovado.\n");
+    }
+
+    return 0;
+}
