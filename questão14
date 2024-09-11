@@ -1,0 +1,43 @@
+#include <stdio.h>
+
+int main() {
+    int x, y, z;
+
+    do {
+        printf("Digite o valor de X (não pode ser negativo): ");
+        scanf("%d", &x);
+        if (x < 0) {
+            printf("Por favor, insira um valor positivo.\n");
+        }
+    } while (x < 0);
+
+    do {
+        printf("Digite o valor de Y (não pode ser negativo): ");
+        scanf("%d", &y);
+        if (y < 0) {
+            printf("Por favor, insira um valor positivo.\n");
+        }
+    } while (y < 0);
+
+    do {
+        printf("Digite o valor de Z (não pode ser negativo): ");
+        scanf("%d", &z);
+        if (z < 0) {
+            printf("Por favor, insira um valor positivo.\n");
+        }
+    } while (z < 0);
+
+    if (x + y > z && x + z > y && y + z > x) {
+        if (x == y && y == z) {
+            printf("Os valores formam um triângulo equilátero.\n");
+        } else if (x == y || y == z || x == z) {
+            printf("Os valores formam um triângulo isósceles.\n");
+        } else {
+            printf("Os valores formam um triângulo escaleno.\n");
+        }
+    } else {
+        printf("Os valores não podem formar um triângulo.\n");
+    }
+
+    return 0;
+}
